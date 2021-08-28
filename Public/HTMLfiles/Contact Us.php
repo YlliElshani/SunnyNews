@@ -33,12 +33,12 @@
             <b>
                 Fields marked with * are required
             </b>
-            <form action="contact us.php" method="get">
+            <form action="../../BackEnd/contact.php" method="post">
 
                 <label>
                    * Your name and last name:
                 </label>
-                <input required min="0" max="40" name="Na1">
+                <input required min="0" max="40" name="name">
 
 
                 <br/>
@@ -47,14 +47,14 @@
                 <label>
                  * Your email:
                 </label>
-                <input required min="0" max="40" type="email">
+                <input required min="0" max="40" type="email" name="email">
 
                 <br/>
 
                 <label>
                     Your phone number:
                 </label>
-                <input min="0" max="40">
+                <input min="0" max="40" name="phoneNR">
 
 
                 <br/>
@@ -62,7 +62,7 @@
                 <label>
                     Category of support
                 </label>
-                <select name="category" id="cat">
+                <select name="category" id="cat" name="cat">
                     <option value="badInfo1"></option>
                     <option value="badInfo">Disinformation</option>
                     <option value="defamation">Defamation</option>
@@ -75,10 +75,10 @@
                 <label>
                   *  Your message:
                 </label>
-                <textarea required min="0" max="40">
+                <textarea required min="0" max="40" name="message">
                 </textarea>
 
-                <input type="submit" class="btn">
+                <input type="submit" class="btn" name="submit">
 
             </form>
 

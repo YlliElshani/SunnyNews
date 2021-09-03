@@ -77,7 +77,13 @@
 		</div>
 
 
-
+		<?php
+			if(isset($_SESSION['sessionID'])){
+				echo "Login successful";
+			}else{
+				echo "come on jeffry you can do it";
+			}
+		?>
 
 
 		<div class="bannerAdd">

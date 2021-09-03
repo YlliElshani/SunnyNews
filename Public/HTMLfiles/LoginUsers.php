@@ -35,22 +35,22 @@
 
             <div class="containerIn">
                 <div>
-                    <img src="../Pics/journalistLogin.png">
+                    <img src="../Pics/newspaper.png">
                 </div>
-                <form>
+                <form action="../../BackEnd/login.php" method="post">
                     <b>
-                        Login for Journalists
+                        Login for Users
                     </b>
                     <label>
                         Email
                     </label>
-                    <input required max="40" min="5" type="email">
+                    <input required max="40" min="5" type="email" name="email">
                     <label>
                         Password
                     </label>
-                    <input required max="400" min="16" type="password"> 
+                    <input  max="400" min="16" type="password" name="password"> 
 
-                    <input type="submit" value="Sign in" class="btn">
+                    <input type="submit" value="Sign in" class="btn" name="submit">
 
                     <a href="#">Forgot Password?</a>
                 </form>

@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	require_once '../includes/database.php';
+	require_once '../../BackEnd/register.php';
+?>
+
 <div class="header">	
 			<a class="logo">SunnyNews</a>
 			<div class="header-right">

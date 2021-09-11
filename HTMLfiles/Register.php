@@ -38,7 +38,7 @@
                 <h3>
                     Register
                 </h3>
-                <form action="../buisnessLogic/procedural/register.php" method="POST">
+                <form action="../buisnessLogic/loginVerify.class.php" method="post">
 
                     <b>
                         Fields marked with * are required
@@ -59,7 +59,11 @@
                         Phone number
                     </label>
                     <input type="text"  placeholder="Phone Number" name="phoneNr">
-                    <button name="submit" id="submitBtn">
+                    <button name="submitBtn" id="submitBtn">
+                        Submit
+                    </button>
+                    <br/>
+                    <button name="registerBtn" id="registerBtn">
                         Submit
                     </button>
                 </form>

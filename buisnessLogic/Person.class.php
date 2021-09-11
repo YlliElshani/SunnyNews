@@ -16,31 +16,26 @@
                 $this->phoneNr=$phoneNr;
             }
 
-        abstract function setSession();
-    }
-
-    class AdminUser extends Person{
-        
-            public function __construct($user_id,$fullName,$email,$password,$phoneNr)
-            {
-                parent::__construct($user_id,$fullName,$email,$password,$phoneNr);
+            public function getUsername(){
+                return $this->fullName;
             }
-        
-        public function setSession(){
-            $_SESSION['role']=1;
-        }
-    }
 
-
-    class SimpleUser extends Person{
+            public function getUser_id(){
+                return $this->user_id;
+            }
             
-            public function __construct($user_id,$fullName,$email,$password,$phoneNr)
-            {
-                parent::__construct($user_id,$fullName,$email,$password,$phoneNr);
+            public function getEmail(){
+                return $this->email;
             }
 
-        public function setSession(){
-            $_SESSION['role']=0;
-        }
+            public function getPassword(){
+                return $this->password;
+            }
+
+            public function getPhoneNr(){
+                return $this->phoneNr;
+            }
         
+
+        abstract function setSession();
     }

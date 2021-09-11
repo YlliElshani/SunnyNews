@@ -5,9 +5,9 @@ include_once 'Person.class.php';
 
 class SimpleUser extends Person{
             
-    public function __construct($user_id,$fullName,$email,$password,$phoneNr)
+    public function __construct($userid,$username,$email,$password,$role)
     {
-        parent::__construct($user_id,$fullName,$email,$password,$phoneNr);
+        parent::__construct($userid,$username,$email,$password,$role);
     }
 
 

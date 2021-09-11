@@ -38,15 +38,15 @@
                 <h3>
                     Register
                 </h3>
-                <form action="../buisnessLogic/loginVerify.class.php" method="post">
+                <form action="../buisnessLogic/loginVerify.php" method="post">
 
                     <b>
                         Fields marked with * are required
                     </b>
                     <label>
-                        Full name *
+                        Username *
                     </label>
-                    <input type="text"  placeholder="Full name" name="fullName">
+                    <input type="text"  placeholder="Full name" name="username">
                     <label>
                         E-Mail *
                     </label>
@@ -55,11 +55,7 @@
                         Password *
                     </label>
                     <input type="password" required placeholder="Password" name="password">
-                    <label>
-                        Phone number
-                    </label>
-                    <input type="text"  placeholder="Phone Number" name="phoneNr">
-                    <button name="submitBtn" id="submitBtn">
+                    <button name="registerBtn" id="submitBtn">
                         Submit
                     </button>
                     <br/>

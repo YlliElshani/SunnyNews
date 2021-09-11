@@ -1,27 +1,28 @@
 <?php
 
     abstract class Person{
-        private $user_id;
-        private $fullName;
+        private $userid;
+        private $username;
         private $email;
         private $password;
-        private $phoneNr;
+        private $role;
 
-            public function __construct($user_id,$fullName,$email,$password,$phoneNr)
+
+            public function __construct($userid,$username,$email,$password,$role)
             {
-                $this->user_id=$user_id;
-                $this->fullName=$fullName;
+                $this->userid=$userid;
+                $this->username=$username;
                 $this->email=$email;
                 $this->password=$password;
-                $this->phoneNr=$phoneNr;
+                $this->role=$role;
             }
 
             public function getUsername(){
-                return $this->fullName;
+                return $this->username;
             }
 
             public function getUser_id(){
-                return $this->user_id;
+                return $this->userid;
             }
             
             public function getEmail(){
@@ -32,8 +33,8 @@
                 return $this->password;
             }
 
-            public function getPhoneNr(){
-                return $this->phoneNr;
+            public function getRole(){
+                return $this->role;
             }
         
 

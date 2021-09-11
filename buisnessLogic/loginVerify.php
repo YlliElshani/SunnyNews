@@ -1,0 +1,89 @@
+<?php 
+    require 'fetchUsers.inc.php';
+    include_once 'AdminUser.php';
+    include_once 'simpleUser.php';
+    include_once 'userMapper.php';
+    session_start();
+    
+    if (isset($_POST['login-btn'])) {
+        $login = new LoginLogic($_POST);
+        $login->verifyData();
+    }else if(isset($_POST['registerBtn'])){
+        $register=new RegisterLogic($_POST);
+        $register->registerUser();
+    }
+     else {
+        header("Location:../HTMLfiles/Homepage.php");
+    }
+    
+    class LoginLogic
+    {
+        private $username = "";
+        private $password = "";
+    
+        public function __construct($formData)
+        {
+            $this->username = $formData['username'];
+            $this->password = $formData['password'];
+        }
+    
+        public function verifyData()
+        {
+            if ($this->variablesNotDefinedWell($this->username, $this->password)) {
+                header("Location:../HTMLfiles/Register.php?error=r=wrongPw");
+            } else if ($this->usernameAndPasswordCorrect($this->username, $this->password)) {
+                header('Location:../HTMLfiles/Homepage.php?success=loggedin');
+            } else
+                header("Location:../HTMLfiles/Register.php?error=r=sqlerror");
+        }
+    
+        private function variablesNotDefinedWell($username, $password)
+        {
+            if (empty($username) || empty($password)) {
+                return true;
+            }
+            return false;
+        }
+    
+        private function usernameAndPasswordCorrect($username, $password)
+        {
+            $mapper=new UserMapper();
+            $user=$mapper->getUserByUsername($username);
+            if ($user==null) {
+                return false;
+            }
+
+            if (password_verify($password,$user['hash'])) {
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+
+    }
+
+    class RegisterLogic{
+
+        private $username = "";
+        private $password = "";
+        private $email = "";
+    
+        public function __construct($formData)
+        {
+            $this->username = $formData['username'];
+            $this->password = $formData['password'];
+            $this->email = $formData['email'];
+        }
+
+        public function registerUser(){
+            $user=new SimpleUser($this->userid,$this->username,$this->email,$this->password,0);
+            $mapper=new UserMapper;
+            $mapper->insertUser($user);
+
+            sleep(5);
+
+            header('Location:../HTMLfiles/LoginUsers.php?success=Registered');
+        }
+    }
+    

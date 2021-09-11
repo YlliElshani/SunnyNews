@@ -1,7 +1,6 @@
 <!DOCTYPE html>
     <?php
         require_once '../buisnessLogic/dbh.class.php';
-        include '../buisnessLogic/procedural/autoLoader.inc.php';
     ?>
 <html>
     <head>
@@ -38,14 +37,14 @@
                 <div>
                     <img src="../Pics/newspaper.png">
                 </div>
-                <form action="../buisnessLogic/procedural/login.php" method="post">
+                <form action="../buisnessLogic/loginVerify.php" method="post">
                     <b>
                         Login for Users
                     </b>
                     <label>
-                        Email
+                        Username
                     </label>
-                    <input required max="40" min="5" type="email" name="email">
+                    <input required max="40" min="5" name="username">
                     <label>
                         Password
                     </label>

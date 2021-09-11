@@ -1,3 +1,16 @@
+<?php
+
+    include_once '../buisnessLogic/userMapper.php';
+
+    if (isset($_SESSION["role"]) && $_SESSION['role']=='1') {
+        $mapper=new UserMapper;
+
+        $userList=$mapper->getAllUsers();
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>

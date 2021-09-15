@@ -28,7 +28,15 @@ class UserMapper extends Dbh
         $stmt=$this->conn->prepare($query);
         $stmt->bindParam(":username",$username);
         $stmt->execute();
-        return $result=$stmt->fetch(PDO::FETCH_ASSOC);
+        $result=$stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function getUserByRole($role){
+        $query="SELECT * from user where role=:role";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        return $result=$stmt->fetchAll();
     }
 
     public function getAllUsers()

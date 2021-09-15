@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -243,6 +247,26 @@
 			
 		</div>
 
+		<?php
+			//TEST FOR USER ROLES
+
+			
+			// if (session_status()==2) {
+			// 	echo 'SESSION ACTIVE';
+			// }else if(session_status()==1){
+			// 	echo 'NO SESSION CREATED';
+			// }else{
+			// 	echo 'SESSION DISABLED';
+			// }
+
+			// if(isset($_SESSION['role']) && $_SESSION['role'] == '1') {
+			// 	echo 'ADMINUSER';
+			// }else{
+			// 	echo 'SIMPLEUSER';
+			// }
+
+			
+        ?>
 
 
 		<?php

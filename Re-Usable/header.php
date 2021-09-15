@@ -1,14 +1,15 @@
-<?php
-	session_start();
-	require_once '../buisnessLogic/procedural/database.inc.php';
-	require_once '../buisnessLogic/procedural/register.php';
-?>
-
 <div class="header">	
 			<a class="logo">SunnyNews</a>
 			<div class="header-right">
 			  <a class="active" href="#home">Home</a>
 			  <a href="#contact">Contact</a>
+			  <?php
+						                if(isset($_SESSION['role']) && $_SESSION['role'] == '1') {
+											?>
+										   <a href="../views/dashboard.php">Dashboard</a>
+										<?php
+										}
+					?>
 			  <a href="#Reklama">Advertise</a>
 			  <a href="#about">About</a>
 			</div>

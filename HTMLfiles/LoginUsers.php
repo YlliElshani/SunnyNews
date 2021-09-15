@@ -50,7 +50,7 @@
                     </label>
                     <input  max="400" min="16" type="password" name="password"> 
 
-                    <input type="submit" value="Sign in" class="btn" name="submit">
+                    <input type="submit" value="Sign in" class="btn" name="login-btn">
 
                     <a href="#">Forgot Password?</a>
                 </form>

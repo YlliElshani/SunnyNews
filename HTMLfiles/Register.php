@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php
-    
+
     require_once '../buisnessLogic/procedural/database.inc.php';
     require_once '../buisnessLogic/procedural/register.php';
     
@@ -59,8 +59,8 @@
                         Submit
                     </button>
                     <br/>
-                    <button name="registerBtn" id="registerBtn">
-                        Submit
+                    <button name="redirected" class="loginBtn">
+                        <a href="LoginUsers.php">Have an Acoount? Log in</a>
                     </button>
                 </form>
 

@@ -82,6 +82,20 @@
     font-size: 16px;
 }
 
+.loginBtn{
+    background-color: rgb(255, 180, 17);
+    border: none;
+    padding: 15px 32px;
+    margin-top: 20px;
+    height: inherit;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+    .loginBtn a{
+        text-decoration: none;
+        color: white;
+    }
 
 
 @media screen and (max-width: 1000px) {

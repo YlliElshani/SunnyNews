@@ -6,7 +6,7 @@
 			  <?php
 						                if(isset($_SESSION['role']) && $_SESSION['role'] == '1') {
 											?>
-										   <a href="../views/dashboard.php">Dashboard</a>
+										   <a href="../HTMLfiles/adminPage.php">Dashboard</a>
 										<?php
 										}
 					?>

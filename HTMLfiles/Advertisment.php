@@ -32,7 +32,7 @@
                 <label>
                    * Your Company name
                 </label>
-                <input required min="0" max="40">
+                <input required min="0" max="40" name="cName">
 
 
                 <br/>
@@ -41,14 +41,14 @@
                 <label>
                  * Your email:
                 </label>
-                <input required min="0" max="40" type="email">
+                <input required min="0" max="40" type="email" name="email">
 
                 <br/>
 
                 <label>
                     Your phone number:
                 </label>
-                <input min="0" max="40" required>
+                <input min="0" max="40" required name="phoneNr">
 
 
                 <br/>
@@ -56,7 +56,7 @@
                 <label>
                     Length of contract
                 </label>
-                <select name="category" id="cat" required >
+                <select name="cLength" id="cat" required >
                     <option value="badInfo1"></option>
                     <option value="badInfo">1 month</option>
                     <option value="defamation">2 months</option>
@@ -66,18 +66,18 @@
                   <br/>
 
                   <h3>Please select your preffered type of Advertisment</h3>
-                    <input type="radio" id="Ad" name="type_ad" value="Banner">
+                    <input type="radio" id="Ad" name="adType" value="Banner">
                     <label for="Banner">Banner Ad</label><br>
-                    <input type="radio" id="Ad" name="type_ad" value="SideBar">
+                    <input type="radio" id="Ad" name="adType" value="SideBar">
                     <label for="SideBar">SideBar Ad</label><br>
-                    <input type="radio" id="Ad" name="type_ad" value="newsAd">
+                    <input type="radio" id="Ad" name="adType" value="newsAd">
                     <label for="newsAd">News Advert</label>
-                    <input type="radio" id="Ad" name="type_ad" value="newsAd">
+                    <input type="radio" id="Ad" name="adType" value="newsAd">
 
                 <label>
                     Additional Info:
                 </label>
-                <textarea  min="0" max="40">
+                <textarea  min="0" max="40" name="moreInfo">
                 </textarea>
 
                 <input type="submit" class="btn">

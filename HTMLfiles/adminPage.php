@@ -48,7 +48,7 @@
     <div class='parentNav'>
         <div>
             <h3>
-                Number of paid adversts:
+                Number of paid adverts:
             </h3>
         </div>
         <div>

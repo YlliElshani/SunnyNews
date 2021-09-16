@@ -19,6 +19,47 @@ body{
         font-family: 'Atkinson Hyperlegible', sans-serif;
     }
 
+
+.newsDiv{
+    border:3px solid black;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    margin-bottom: 4%;
+}
+    .newsDiv h3{
+        font-size: 25px;
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+    }
+
+    
+    .newsDiv b{
+        font-size: 17px;
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+    }
+
+    .newsDiv a{
+        text-decoration: none;
+        color: coral;
+        font-family: 'Atkinson Hyperlegible', sans-serif;
+        font-size: 30px;
+    }
+
+    .newsDiv div{
+        padding: 15px;
+        border:2px solid black;
+        margin-bottom: 2%;
+    }
+
+    .newsDiv p{
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 15px;
+    }
     
 
 .formBox{

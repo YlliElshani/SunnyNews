@@ -3,7 +3,6 @@
     class Article{
         
 
-        private $id;
         private $headline;
         private $content;
         private $journalist;

@@ -4,6 +4,13 @@
 
     $mapper=new ArticleMapper();
     $articles=$mapper->getAllArticles();
+
+    if (isset($_GET['id'])) {
+        $id=$_GET['id'];
+
+        $mapper=new ArticleMapper();
+        $articles=$mapper->getArticleByID($id);
+    }
 ?>
 
 
@@ -19,6 +26,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     <script src="../JSFiles/sidebar.js"></script>
         <title>
             News Editor
@@ -56,39 +66,90 @@
                 </form>
             </div>
 
-        <div class='parentNav'>
-            <div>
-                <h3>
-                    Article to be posted:
-                </h3>
-                <p>
-                <?php
-                    $mapper=new ArticleMapper();
-                    $mapper->getArticleByID('id');
-                ?>
-                </p>
-            </div>
-        </div>
-        <div class='parentNav'>
-            <div>
-                <h3>
-                   Number of active articles:
-                </h3>
-            </div>
-        </div>
 
-        <div class="parentNav">
+            <div class="formBox">
+                <h3>
+                    Edit Article by Id
+                </h3>
+            <?php
+                $article=$mapper->getArticleByID('5');
+                foreach($article as $articles){
+                ?>
+                <form action="../buisnessLogic/editArticle.php" method="post">
+                    <b>
+                        Fields marked with * are required
+                    </b>
+                    <label>
+                        ID *
+                    </label>
+                    <input type="text" placeholder="Headline" name="id" value=<?php echo $articles['id'];?>>
+                    <label>
+                        Headline *
+                    </label>
+                    <input type="text" placeholder="Headline" name="headline" value=<?php echo $articles['headline'];?>>
+                    <label>
+                        Content *
+                    </label>
+                    <input type="text" required  name="content" value=<?php echo $articles['content'];?>></input>
+                    <label>
+                       Journalist name(s)
+                    </label>
+                    <input type="text" placeholder="Journalist(s)" name="journalists" value=<?php echo $articles['journalists'];?>>
+                    <button name="submitBtn" id="submitBtn">
+                        Submit
+                    </button>
+                    <br/>
+                </form>
                 <?php
-                    $article = $mapper->getArticleByID('2');
+                    }
+                ?>
+            </div>
+
+        <div class="newsDiv">
+                <h3>
+                    Active articles:
+                </h3>
+            <div>
+                <?php
+                    $article = $mapper->getArticleByID('5');
                     foreach($article as $articles){
                 ?>
-                <ul class="list">
-                    <li><?php echo $articles['headline'];?></li><br>
-                    <li><?php echo $articles['content'];?></li><br>
-                </ul>
+                  <b>
+                  <?php echo $articles['headline'];?><br>
+                  </b> 
+                  <p>
+                    <?php echo $articles['content'];?><br>
+                  </p>
+                  <p>
+                    <?php echo $articles['journalists'];?><br>
+                  </p> 
+                    <a href=<?php echo "../buisnessLogic/deleteArticle.php?id=".$articles['id'];
+                    ?>>Delete</a>
                 <?php 
                     }
                 ?>
             </div>
+
+            <div>
+                <?php
+                    $article = $mapper->getArticleByID('6');
+                    foreach($article as $articles){
+                ?>
+                  <b>
+                  <?php echo $articles['headline'];?><br>
+                  </b> 
+                  <p>
+                    <?php echo $articles['content'];?><br>
+                  </p>
+                  <p>
+                    <?php echo $articles['journalists'];?><br>
+                  </p> 
+                    <a href=<?php echo "../buisnessLogic/deleteArticle.php?id=".$articles['id'];
+                    ?>>Delete</a>
+                <?php 
+                    }
+                ?>
+            </div>
+        </div>
     </body>
 </html>

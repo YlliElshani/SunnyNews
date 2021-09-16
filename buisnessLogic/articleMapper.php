@@ -68,9 +68,19 @@ require_once 'dbh.class.php';
                 from the NewsDetail.html file, with different article Id's.
             */
             
-            public function editArticle(){
-                
-            }
+            public function editArticle(\Article $article,$id){
+                    $query="UPDATE articles SET headline=:headline,content=:content,journalists=:journalists WHERE id=:id";
+                    var_dump($article);
+                    $statement=$this->conn->prepare($query);
+                    $headline=$article->getHeadline();
+                    $content=$article->getContent();
+                    $journalists=$article->getJournalist();
 
+                    $statement->bindParam(":headline",$headline);
+                    $statement->bindParam(":content",$content);
+                    $statement->bindParam(":journalists",$journalists);
+                    $statement->bindParam(":id",$id);
+                    $statement->execute();
+            }
 
     }

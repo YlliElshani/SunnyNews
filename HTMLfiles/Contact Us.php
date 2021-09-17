@@ -33,7 +33,7 @@
             <b>
                 Fields marked with * are required
             </b>
-            <form action="../../BackEnd/contact.php" method="post">
+            <form action="../buisnessLogic/contactLogic.php" method="post">
 
                 <label>
                    * Your name and last name:
@@ -54,7 +54,7 @@
                 <label>
                     Your phone number:
                 </label>
-                <input min="0" max="40" name="phoneNR">
+                <input min="0" max="40" name="phoneNr">
 
 
                 <br/>
@@ -62,7 +62,7 @@
                 <label>
                     Category of support
                 </label>
-                <select name="category" id="cat" name="cat">
+                <select name="category" id="cat">
                     <option value="badInfo1"></option>
                     <option value="badInfo">Disinformation</option>
                     <option value="defamation">Defamation</option>
@@ -78,7 +78,7 @@
                 <textarea required min="0" max="40" name="message">
                 </textarea>
 
-                <input type="submit" class="btn" name="submit">
+                <input type="submit" class="btn" name="submitBtn">
 
             </form>
 

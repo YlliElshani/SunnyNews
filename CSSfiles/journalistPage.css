@@ -60,7 +60,46 @@ body{
         font-family: 'Noto Sans', sans-serif;
         font-size: 15px;
     }
-    
+
+.infoBox{
+    border:3px solid black;
+    width: 70%;
+    margin-left: 20%;
+    margin-right: 10%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+    margin-bottom: 4%;
+}
+
+.infoBox h3{
+    font-size: 25px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+
+.infoBox b{
+    font-size: 17px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.infoBox a{
+    text-decoration: none;
+    color: coral;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 30px;
+}
+
+.infoBox div{
+    padding: 15px;
+}
+
+.infoBox p{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15px;
+}
 
 .formBox{
         padding: 20px;

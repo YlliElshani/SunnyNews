@@ -1,6 +1,7 @@
 <?php
 
-    class Form{
+    class Contact{
+
         private $name;
         private $email;
         private $phoneNr;
@@ -35,4 +36,5 @@
             public function getMessage(){
                 return $this->message;
             }
+
     }

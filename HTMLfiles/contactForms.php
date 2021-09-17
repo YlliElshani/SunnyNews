@@ -1,6 +1,8 @@
 <?php
+    include_once '../buisnessLogic/contactMapper.php';
+    include_once '../buisnessLogic/contactLogic.php';
 
-
+    $mapper=new ContactMapper();
 ?>
 
 
@@ -26,11 +28,43 @@
         include('../Re-Usable/adminNav.php');
       ?>
 
-    <div class='parentNav'>
+    <div class='infoBox'>
         <div>
             <h3>
                 Contact forms sent:
             </h3>
+            <div>
+                <?php
+                    $forms=$mapper->getAllForms();
+                    foreach($forms as $form){
+                ?>
+                
+                <b>
+                    <?php echo $form['name']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['email']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['phoneNr']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['category']?>
+                </b>
+                    <br>
+                <p>
+                    <?php echo $form['message']?>
+                </p>
+                        
+                <a href=<?php echo "../buisnessLogic/deleteContact.php?id=".$form['form_id'];
+                    ?>>Confirm</a>
+                <?php
+                } 
+                ?>
+            </div>
         </div>
     </div>
 

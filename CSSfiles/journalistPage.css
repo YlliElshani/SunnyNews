@@ -79,6 +79,11 @@ body{
     font-family: 'Atkinson Hyperlegible', sans-serif;
 }
 
+.infoBox h2{
+    font-size: 35px;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
 
 .infoBox b{
     font-size: 17px;

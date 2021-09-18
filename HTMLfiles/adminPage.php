@@ -2,11 +2,12 @@
 
     include_once '../buisnessLogic/userMapper.php';
 
-    if (isset($_SESSION["role"]) && $_SESSION['role']=='1') {
-        $mapper=new UserMapper;
+  //  if (isset($_SESSION["role"]) && $_SESSION['role']=='1') {
+        $mapper=new UserMapper();
 
         $userList=$mapper->getAllUsers();
-    }
+        $nrUsers=$mapper->getNrUsers();
+   // }
 
 ?>
 
@@ -33,16 +34,42 @@
         include('../Re-Usable/adminNav.php');
       ?>
 
-    <div class='parentNav'>
+    <div class='infoBox'>
         <div>
             <h3>
-                Number of active users:
+                All users:
             </h3>
+                <div>
+                    <?php
+                        $users=$mapper->getAllUsers();
+                        foreach($users as $user){
+                    ?>
+                    <b>
+                        <?php echo $user['username']?>
+                    </b>
+                        <br/>
+                    <b>
+                        <?php echo $user['email']?>
+                    </b>
+                    <?php
+                    }
+                    ?>
+                </div>
         </div>
         <div>
             <h3>
-                Number of articles:
+                Number of users:
             </h3>
+            <?php
+                $nrUsers=$mapper->getNrUsers();
+                foreach($nrUsers as $nr){
+            ?>
+            <h2>
+                <?php echo $nr['nrUsers']?>
+            </h2>
+            <?php
+                }
+            ?>
         </div>
     </div>
     <div class='parentNav'>
@@ -53,7 +80,7 @@
         </div>
         <div>
             <h3>
-                Number of Jurnalists:
+                Number of Journalists:
             </h3>
         </div>
     </div>

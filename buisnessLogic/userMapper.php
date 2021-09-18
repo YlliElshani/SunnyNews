@@ -39,6 +39,13 @@ class UserMapper extends Dbh
         return $result=$stmt->fetchAll();
     }
 
+    public function getNrUsers(){
+        $query="SELECT count(*) as nrUsers from user";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        return $result=$stmt->fetchAll();
+    }
+
     public function getAllUsers()
     {
         $query="SELECT * from user";

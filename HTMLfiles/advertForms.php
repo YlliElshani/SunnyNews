@@ -1,6 +1,8 @@
 <?php
 
-
+    include_once '../buisnessLogic/advertMapper.php';
+    include_once '../buisnessLogic/advertLogic.php';
+    $mapper=new AdvertMapper()
 ?>
 
 
@@ -26,11 +28,48 @@
         include('../Re-Usable/adminNav.php');
       ?>
 
-    <div class='parentNav'>
+<div class='infoBox'>
         <div>
             <h3>
-                Advertisment forms sent:
+                Contact forms sent:
             </h3>
+            <div>
+                <?php
+                    $forms=$mapper->getAllAdverts();
+                    foreach($forms as $form){
+                ?>
+                
+                <b>
+                    <?php echo $form['cName']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['email']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['phoneNr']?>
+                </b>
+                    <br>
+                <b>
+                    <?php echo $form['cLength']?>
+                </b>
+                    <br>
+                <p>
+                    <?php echo $form['adType']?>
+                </p>
+
+                <p>
+                    <?php echo $form['moreInfo']?>
+                </p>
+                        
+                <a href=<?php echo "../buisnessLogic/deleteContact.php?id=".$form['id'];
+                    ?>>Confirm</a>
+                <br/>
+                <?php
+                } 
+                ?>
+            </div>
         </div>
     </div>
 

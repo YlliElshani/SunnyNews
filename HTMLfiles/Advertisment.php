@@ -27,7 +27,7 @@
             <b>
                 Fields marked with * are required
             </b>
-            <form>
+            <form action="../buisnessLogic/advertLogic.php" method="POST">
 
                 <label>
                    * Your Company name
@@ -58,10 +58,10 @@
                 </label>
                 <select name="cLength" id="cat" required >
                     <option value="badInfo1"></option>
-                    <option value="badInfo">1 month</option>
-                    <option value="defamation">2 months</option>
-                    <option value="crAbuse">3 months</option>
-                    <option value="itSupport">4 months</option>
+                    <option value="1 month">1 month</option>
+                    <option value="2 month">2 months</option>
+                    <option value="3 month">3 months</option>
+                    <option value="4 month">4 months</option>
                   </select>
                   <br/>
 
@@ -80,7 +80,7 @@
                 <textarea  min="0" max="40" name="moreInfo">
                 </textarea>
 
-                <input type="submit" class="btn">
+                <input type="submit" class="btn" name="submitBtn">
 
             </form>
         </div>

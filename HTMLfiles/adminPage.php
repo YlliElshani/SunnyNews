@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../buisnessLogic/userMapper.php';
+    include_once '../buisnessLogic/Mapper/userMapper.php';
 
   //  if (isset($_SESSION["role"]) && $_SESSION['role']=='1') {
         $mapper=new UserMapper();
@@ -30,9 +30,24 @@
         </title>
     </head>
     <body>
+
+    <div class="header">
+        <div>
+            <b>
+                DashboardPro
+            </b>
+        </div>
+
+    <div>
+        <a href="../buisnessLogic/logout.php">
+            Logout
+        </a>
+    </div>
+    </div>
+
     <?php
         include('../Re-Usable/adminNav.php');
-      ?>
+    ?>
 
     <div class='infoBox'>
         <div>

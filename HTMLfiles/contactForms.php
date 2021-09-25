@@ -1,6 +1,6 @@
 <?php
-    include_once '../buisnessLogic/contactMapper.php';
-    include_once '../buisnessLogic/contactLogic.php';
+    include_once '../buisnessLogic/Mapper/contactMapper.php';
+    include_once '../buisnessLogic/Logic/contactLogic.php';
 
     $mapper=new ContactMapper();
 ?>

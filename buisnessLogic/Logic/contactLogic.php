@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'contactClass.php';
-    include_once 'contactMapper.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\SuperClass\contactClass.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\Mapper\contactMapper.php';
 
     if (isset($_POST['submitBtn'])) {
         $contact=new ContactLogic($_POST);
@@ -27,10 +27,10 @@
 
             public function insertData(){
                 $contact=new Contact($this->name,$this->email,$this->phoneNr,$this->category,$this->message);
-
                 $mapper=new ContactMapper();
+                
                 $mapper->insertForm($contact);
                 sleep(2);
-                header('Location:../HTMLfiles/Contact Us.php?success=formSent');
+                header('Location:../../HTMLfiles/Contact Us.php?success=formSent');
             }
     }

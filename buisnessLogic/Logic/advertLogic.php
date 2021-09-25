@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'advertClass.php';
-    include_once 'advertMapper.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\SuperClass\advertClass.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\Mapper\advertMapper.php';
 
     if (isset($_POST['submitBtn'])) {
         $advert=new AdvertLogic($_POST);
@@ -33,7 +33,7 @@
                 $mapper=new AdvertMapper();
                 $mapper->insertAdvert($advert);
                 sleep(2);
-                header("Location:../HTMLfiles/Advertisment.php?success=FormSent");
+                header("Location:../../HTMLfiles/Advertisment.php?success=FormSent");
             }
 
     }

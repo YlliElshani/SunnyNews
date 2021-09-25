@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'articleClass.php';
-    include_once 'articleMapper.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\SuperClass\articleClass.php';
+    include_once 'C:\xampp\htdocs\WebPracticeProject\buisnessLogic\Mapper\articleMapper.php';
 
         session_start();
 
@@ -29,6 +29,6 @@
 
                     sleep(3);
 
-                    header('Location:../HTMLfiles/newsEditor.php?success=articlePosted');
+                    header('Location:../../HTMLfiles/newsEditor.php?success=articlePosted');
                 }
         }

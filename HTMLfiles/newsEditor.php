@@ -1,6 +1,6 @@
 <?php
-    include_once '../buisnessLogic/articleMapper.php';
-    include_once '../buisnessLogic/articleLogic.php';
+    include_once '../buisnessLogic/Mapper/articleMapper.php';
+    include_once '../buisnessLogic/Logic/articleLogic.php';
 
     $mapper=new ArticleMapper();
     $articles=$mapper->getAllArticles();
@@ -42,7 +42,7 @@
                 <h3>
                     Add news Article
                 </h3>
-                <form action="../buisnessLogic/articleLogic.php" method="post">
+                <form action="../buisnessLogic/Logic/articleLogic.php" method="post">
 
                     <b>
                         Fields marked with * are required
@@ -75,7 +75,7 @@
                 $article=$mapper->getArticleByID('5');
                 foreach($article as $articles){
                 ?>
-                <form action="../buisnessLogic/editArticle.php" method="post">
+                <form action="../buisnessLogic/Edit/editArticle.php" method="post">
                     <b>
                         Fields marked with * are required
                     </b>
@@ -111,7 +111,7 @@
                 </h3>
             <div>
                 <?php
-                    $article = $mapper->getArticleByID('5');
+                    $article = $mapper->getArticleByID('10');
                     foreach($article as $articles){
                 ?>
                   <b>
@@ -123,7 +123,7 @@
                   <p>
                     <?php echo $articles['journalists'];?><br>
                   </p> 
-                    <a href=<?php echo "../buisnessLogic/deleteArticle.php?id=".$articles['id'];
+                    <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
                 <?php 
                     }
@@ -144,7 +144,7 @@
                   <p>
                     <?php echo $articles['journalists'];?><br>
                   </p> 
-                    <a href=<?php echo "../buisnessLogic/deleteArticle.php?id=".$articles['id'];
+                    <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
                 <?php 
                     }

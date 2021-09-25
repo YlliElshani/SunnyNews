@@ -1,7 +1,7 @@
 <?php
 
-include_once 'articleMapper.php';
-include_once 'articleClass.php';
+include_once '../Mapper/articleMapper.php';
+include_once '../SuperClass/articleClass.php';
 
     // if (isset($_GET['id']) && isset($_GET['headline'])) {
     //     $headline=$_GET['headline'];
@@ -43,6 +43,6 @@ include_once 'articleClass.php';
 
                 sleep(1);
 
-                header('Location:../HTMLfiles/newsEditor.php?success=articleEdited');
+                header('Location:../../HTMLfiles/newsEditor.php?success=articleEdited');
             }
     }

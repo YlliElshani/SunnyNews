@@ -1,6 +1,6 @@
 <?php
 
-include_once 'articleMapper.php';
+include_once '../Mapper/articleMapper.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $mapper = new ArticleMapper();
@@ -8,5 +8,5 @@ if (isset($_GET['id'])) {
 
     sleep(1);
 
-    header('Location:../HTMLfiles/newsEditor.php');
+    header('Location:../../HTMLfiles/newsEditor.php');
 }

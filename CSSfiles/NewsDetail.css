@@ -3,7 +3,7 @@
     margin-bottom: 2%;
     margin-right: 39.5%;
     margin-left: 0.5%;
-    width: 60%;
+    width:55%;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -24,11 +24,25 @@
         }
 
         .LeftDiv img{
-            width: 60%;
-            margin-right: 30%;
+            width: 50%;
+            margin-right: 25%;
             margin-left: 10%;
             height: 520px;
         }
+
+        .LeftDiv button{
+            background-color: rgb(255, 180, 17);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin-top: 20px;
+            height: inherit;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
 
 .RightBox{
     display: flex;
@@ -41,6 +55,7 @@
     margin-top: -86%;
     margin-bottom: 5%;
     padding: 20px;
+    float: left;
 }
 
         .RightBox div{

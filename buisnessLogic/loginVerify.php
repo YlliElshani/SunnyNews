@@ -1,8 +1,7 @@
 <?php 
-    require 'fetchUsers.inc.php';
-    include_once 'AdminUser.php';
-    include_once 'simpleUser.php';
-    include_once 'userMapper.php';
+    include_once 'SuperClass/AdminUser.php';
+    include_once 'SuperClass/simpleUser.php';
+    include_once 'Mapper/userMapper.php';
     session_start();
 
     if (isset($_POST['login-btn'])) {

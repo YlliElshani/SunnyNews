@@ -5,6 +5,7 @@
             News in Detail
         </title>
         <link rel="stylesheet" href="../CSSfiles/HeaderStyle.css">
+        <link rel="stylesheet" href="../CSSfiles/ContactUs.css">
         <link rel="stylesheet" href="../CSSfiles/FooterStyle.css">
         <link rel="stylesheet" href="../CSSfiles/NewsDetail.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,6 +52,67 @@
                        ut risus sit amet egestas. Integer ornare aliquet mi eget aliquet. Quisque venenatis eget eros
                         eu porttitor. Pellentesque sed viverra nisi, ac blandit justo. Suspendisse id fermentum nunc.
         </p>
+
+        <div class="formDiv" id="modal">
+            <p>
+                Think something is wrong or missing in this article?
+            </p>
+            <b>
+                Contact us for support!
+            </b>
+            <br/>
+            <b>
+                Fields marked with * are required
+            </b>
+            <form action="../buisnessLogic/Logic/rContactLogic.php" method="post">
+
+                <label>
+                   * Your name and last name:
+                </label>
+                <input required min="0" max="40" name="name">
+
+
+                <br/>
+
+
+                <label>
+                 * Your email:
+                </label>
+                <input required min="0" max="40" type="email" name="email">
+
+                <br/>
+
+                <label>
+                    Your phone number:
+                </label>
+                <input min="0" max="40" name="phoneNr">
+
+
+                <br/>
+
+                <label>
+                    Category of support
+                </label>
+                <select name="category" id="cat">
+                    <option value="badInfo1"></option>
+                    <option value="badInfo">Disinformation</option>
+                    <option value="defamation">Defamation</option>
+                    <option value="crAbuse">Copyright Issues</option>
+                    <option value="itSupport">It Support</option>
+                  </select>
+                  <br/>
+
+
+                <label>
+                  *  Your message:
+                </label>
+                <textarea required min="0" max="40" name="message">
+                </textarea>
+
+                <input type="submit" class="btn" name="submitBtn">
+
+            </form>
+        </div>
     </div>
 
     <div class="RightBox">
@@ -111,3 +173,7 @@
         include('../Re-Usable/footer.php');
       ?>
 </html>
+
+<script>
+    document.getElementById('modal')
+</script>

@@ -1,7 +1,7 @@
 <?php
 
-    include_once '../buisnessLogic/advertMapper.php';
-    include_once '../buisnessLogic/advertLogic.php';
+    include_once '../buisnessLogic/Mapper/advertMapper.php';
+    include_once '../buisnessLogic/Logic/advertLogic.php';
     $mapper=new AdvertMapper()
 ?>
 

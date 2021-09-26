@@ -49,15 +49,19 @@
             $mapper = new UserMapper();
             $user = $mapper->getUserByUsername($username);
 
-            // if ($user==null) {
-            //     return false;
-            // }
+            /*
 
-            // if (password_verify($password,$user['password'])) {
-            //     return true;
-            // }else{
-            //     return false;
-            // }
+            if ($user==null) {
+                return false;
+            }
+
+            if (password_verify($password,$user['password'])) {
+                return true;
+            }else{
+                return false;
+            }
+
+            */
 
             if ($user == null || count($user) == 0) return false;
             else if (password_verify($password, $user['password'])){

@@ -4,7 +4,7 @@
 
     require_once '../buisnessLogic/procedural/database.inc.php';
     require_once '../buisnessLogic/procedural/register.php';
-    
+
     ?>
     <head>
 
@@ -39,22 +39,21 @@
                     Register
                 </h3>
                 <form action="../buisnessLogic/loginVerify.php" method="post">
-
                     <b>
                         Fields marked with * are required
                     </b>
                     <label>
                         Username *
                     </label>
-                    <input type="text"  placeholder="Full name" name="username">
+                    <input type="text" required  placeholder="Full name" name="username" id="username">
                     <label>
                         E-Mail *
                     </label>
-                    <input type="email" required placeholder="Email" name="email">
+                    <input type="text" required  placeholder="Email" name="email" id="email">
                     <label>
                         Password *
                     </label>
-                    <input type="password" required placeholder="Password" name="password">
+                    <input type="password" required  placeholder="Password" name="password" id="password">
                     <button name="registerBtn" id="submitBtn">
                         Submit
                     </button>
@@ -72,3 +71,37 @@
       ?>
     </body>
 </html>
+
+
+    <script>
+        emailReg=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+        passwordReg=/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+
+        function validateForm(){
+            var username=document.getElementById("username").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+
+            if(username==null||username==""){
+                alert("Please enter your username");
+                return false;
+            }
+            if(email==null||email==""){
+                alert("Please enter an email");
+                return false;
+            }
+            if(!test.emailReg(email)){
+                alert("Please enter a valid email");
+                return false;
+            }
+            if(password==null||password==""){
+                alert("Please enter a password");
+                return false;
+            }
+            if(!test.passwordReg(password)){
+                alert("Please enter a valid password");
+                return false;
+            }
+                alert("Succesful register");
+        }
+    </script>

@@ -29,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <script src="../JSFiles/jsValidate.js"></script>
     <script src="../JSFiles/sidebar.js"></script>
         <title>
             News Editor
@@ -42,7 +43,7 @@
                 <h3>
                     Add news Article
                 </h3>
-                <form action="../buisnessLogic/Logic/articleLogic.php" method="post">
+                <form action="../buisnessLogic/Logic/articleLogic.php" method="post" onsubmit="return validate()">
 
                     <b>
                         Fields marked with * are required
@@ -50,15 +51,15 @@
                     <label>
                         Headline *
                     </label>
-                    <input type="text" placeholder="Headline" name="headline">
+                    <input type="text" placeholder="Headline" name="headline" id="headline">
                     <label>
                         Content *
                     </label>
-                    <textarea required  name="content"></textarea>
+                    <textarea name="content" id="content"></textarea>
                     <label>
                        Journalist name(s)
                     </label>
-                    <input type="text" placeholder="Journalist(s)" name="journalists">
+                    <input type="text" placeholder="Journalist(s)" name="journalists" id="journos">
                     <button name="submitBtn" id="submitBtn">
                         Submit
                     </button>
@@ -75,7 +76,7 @@
                 $article=$mapper->getArticleByID('5');
                 foreach($article as $articles){
                 ?>
-                <form action="../buisnessLogic/Edit/editArticle.php" method="post">
+                <form action="../buisnessLogic/Edit/editArticle.php" method="post" onsubmit="return validate()">
                     <b>
                         Fields marked with * are required
                     </b>

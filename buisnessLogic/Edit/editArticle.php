@@ -3,20 +3,6 @@
 include_once '../Mapper/articleMapper.php';
 include_once '../SuperClass/articleClass.php';
 
-    // if (isset($_GET['id']) && isset($_GET['headline'])) {
-    //     $headline=$_GET['headline'];
-    //     $content=$_GET['content'];
-    //     $journalists=$_GET['journalists'];
-
-    //     $article=new Article($headline,$content,$journalists);
-    //     $mapper=new ArticleMapper();
-    //     $mapper->editArticle($article,$id);
-        
-    //     sleep(1);
-
-    //     header('Location:../HTMLfiles/newsEditor.php');
-    // }
-
     if (isset($_POST['submitBtn'])) {
         $article=new EditArticle($_POST);
         $article->editData();

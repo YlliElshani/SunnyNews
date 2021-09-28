@@ -22,7 +22,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
 
         <title>Register</title>
-
+        <script src="../JSFiles/jsValidate.js"></script>
     </head>
     <body>
     <?php
@@ -38,23 +38,23 @@
                 <h3>
                     Register
                 </h3>
-                <form action="../buisnessLogic/loginVerify.php" method="post">
+                <form action="../buisnessLogic/loginVerify.php" method="post" onsubmit="return validateArr()">
                     <b>
                         Fields marked with * are required
                     </b>
                     <label>
                         Username *
                     </label>
-                    <input type="text" required  placeholder="Full name" name="username" id="username">
+                    <input type="text" placeholder="Full name" name="username" id="username">
                     <label>
                         E-Mail *
                     </label>
-                    <input type="text" required  placeholder="Email" name="email" id="email">
+                    <input type="text" placeholder="Email" name="email" id="email">
                     <label>
                         Password *
                     </label>
-                    <input type="password" required  placeholder="Password" name="password" id="password">
-                    <button name="registerBtn" id="submitBtn">
+                    <input type="password" placeholder="Password" name="password" id="password">
+                    <button name="registerBtn" id="submitBtn"  id="submitBtn">
                         Submit
                     </button>
                     <br/>
@@ -74,34 +74,28 @@
 
 
     <script>
-        emailReg=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-        passwordReg=/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 
         function validateForm(){
-            var username=document.getElementById("username").value;
-            var email=document.getElementById("email").value;
-            var password=document.getElementById("password").value;
+            let loginBtn=document.getElementById('submitBtn');
+            var username=document.getElementById("username");
+            var email=document.getElementById("email");
+            var password=document.getElementById("password");
 
-            if(username==null||username==""){
+            if(username.value==""){
                 alert("Please enter your username");
                 return false;
             }
-            if(email==null||email==""){
+            else if(email.value==""){
                 alert("Please enter an email");
                 return false;
             }
-            if(!test.emailReg(email)){
-                alert("Please enter a valid email");
-                return false;
-            }
-            if(password==null||password==""){
+            else if(password.value==""){
                 alert("Please enter a password");
                 return false;
             }
-            if(!test.passwordReg(password)){
-                alert("Please enter a valid password");
-                return false;
-            }
                 alert("Succesful register");
+                return true;
         }
+
+       
     </script>

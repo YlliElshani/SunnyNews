@@ -14,16 +14,22 @@
             private $headline;
             private $content;
             private $journalists;
+            private $dateAdded;
+            private $timesRead;
+
 
                 function __construct($formData)
                 {   
                     $this->headline=$formData['headline'];
                     $this->content=$formData['content'];
                     $this->journalists=$formData['journalists'];
+                    $this->dateAdded=$formData['dateAdded'];
+                    $this->timesRead=$formData['timesRead'];
+
                 }
 
                 public function insertData(){
-                    $article=new Article($this->headline,$this->content,$this->journalists);
+                    $article=new Article($this->headline,$this->content,$this->journalists,$this->dateAdded,$this->timesRead);
                     $mapper=new ArticleMapper();
                     $mapper->insertArticle($article);
 

@@ -44,18 +44,33 @@ require_once 'dbh.class.php';
                 $statement->execute();
             }
 
+
+            public function getMostReadArticle(){
+                $this->query="SELECT l.headline,count(*) AS MeTeLexuarit FROM articles l
+                WHERE l.dateAdded>'2021-09-28' AND l.dateAdded<'2021-09-30'
+                group by l.headline ASC";
+                $statement = $this->conn->prepare($this->query);
+                $statement->execute();
+                return $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+
             
             public function insertArticle(\Article $article){
-                $query="INSERT INTO articles (headline,content,journalists) VALUES(:headline,:content,:journalists)";
+                $query="INSERT INTO articles (headline,content,journalists,dateAdded,timesRead)
+                VALUES(:headline,:content,:journalists,:dateAdded,:timesRead)";
                 $statement = $this->conn->prepare($query);
 
                 $headline=$article->getHeadline();
                 $content=$article->getContent();
                 $journalists=$article->getJournalist();
+                $dateAdded=$article->getDateAdded();
+                $timesRead=$article->getTimesRead();
 
                 $statement->bindParam(":headline",$headline);
                 $statement->bindParam(":content",$content);
                 $statement->bindParam(":journalists",$journalists);
+                $statement->bindParam(":dateAdded",$dateAdded);
+                $statement->bindParam(":timesRead",$timesRead);
                 $statement->execute();
             }
 
@@ -69,16 +84,21 @@ require_once 'dbh.class.php';
             */
             
             public function editArticle(\Article $article,$id){
-                    $query="UPDATE articles SET headline=:headline,content=:content,journalists=:journalists WHERE id=:id";
+                    $query="UPDATE articles SET headline=:headline,content=:content,journalists=:journalists,dateAdded=:dateAdded,timesRead=:timesRead
+                    WHERE id=:id";
                     var_dump($article);
                     $statement=$this->conn->prepare($query);
                     $headline=$article->getHeadline();
                     $content=$article->getContent();
                     $journalists=$article->getJournalist();
-
+                    $dateAdded=$article->getDateAdded();
+                    $timesRead=$article->getTimesRead();
+    
                     $statement->bindParam(":headline",$headline);
                     $statement->bindParam(":content",$content);
                     $statement->bindParam(":journalists",$journalists);
+                    $statement->bindParam(":dateAdded",$dateAdded);
+                    $statement->bindParam(":timesRead",$timesRead);
                     $statement->bindParam(":id",$id);
                     $statement->execute();
             }

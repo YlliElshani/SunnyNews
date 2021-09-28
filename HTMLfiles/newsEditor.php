@@ -60,6 +60,19 @@
                        Journalist name(s)
                     </label>
                     <input type="text" placeholder="Journalist(s)" name="journalists" id="journos">
+
+                    <label>
+                       Date Added
+                    </label>
+                    <input type="date" placeholder="Date Added" name="dateAdded" id="dateAdded">
+
+                    <!-- For testing purposes only -->
+                    
+                    <label>
+                       Times Read
+                    </label>
+                    <input type="number" placeholder="Times Read" name="timesRead" id="journos">
+
                     <button name="submitBtn" id="submitBtn">
                         Submit
                     </button>
@@ -96,6 +109,18 @@
                        Journalist name(s)
                     </label>
                     <input type="text" placeholder="Journalist(s)" name="journalists" value=<?php echo $articles['journalists'];?>>
+
+                    <label>
+                       Date Added
+                    </label>
+                    <input type="date" placeholder="Date Added" name="dateAdded" id="dateAdded">
+
+                    <!-- For testing purposes only -->
+                    
+                    <label>
+                       Times Read
+                    </label>
+                    <input type="number" placeholder="Times Read" name="timesRead" id="journos">
                     <button name="submitBtn" id="submitBtn">
                         Submit
                     </button>
@@ -112,7 +137,7 @@
                 </h3>
             <div>
                 <?php
-                    $article = $mapper->getArticleByID('10');
+                    $article = $mapper->getAllArticles();
                     foreach($article as $articles){
                 ?>
                   <b>
@@ -124,8 +149,15 @@
                   <p>
                     <?php echo $articles['journalists'];?><br>
                   </p> 
+                  <p>
+                    <?php echo $articles['timesRead'];?><br>
+                  </p> 
+                  <p>
+                    <?php echo $articles['dateAdded'];?><br>
+                  </p> 
                     <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
+                    <br/>
                 <?php 
                     }
                 ?>

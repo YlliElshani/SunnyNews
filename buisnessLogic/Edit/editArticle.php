@@ -15,6 +15,7 @@ include_once '../SuperClass/articleClass.php';
         private $journalists;
         private $dateAdded;
         private $timesRead;
+        private $img_path;
 
             function __construct($formData)
             {   
@@ -24,10 +25,11 @@ include_once '../SuperClass/articleClass.php';
                 $this->journalists=$formData['journalists'];
                 $this->dateAdded=$formData['dateAdded'];
                 $this->timesRead=$formData['timesRead'];
+                $this->img_path=$formData['img_path'];
             }
 
             public function editData(){
-                $article=new Article($this->id,$this->headline,$this->content,$this->journalists,$this->dateAdded,$this->timesRead);
+                $article=new Article($this->id,$this->headline,$this->content,$this->journalists,$this->dateAdded,$this->timesRead,$this->img_path);
                 $mapper=new ArticleMapper();
                 $mapper->editArticle($article,$this->id);
 

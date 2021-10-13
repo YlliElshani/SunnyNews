@@ -16,6 +16,7 @@
             private $journalists;
             private $dateAdded;
             private $timesRead;
+            private $img_path;
 
 
                 function __construct($formData)
@@ -25,11 +26,12 @@
                     $this->journalists=$formData['journalists'];
                     $this->dateAdded=$formData['dateAdded'];
                     $this->timesRead=$formData['timesRead'];
+                    $this->img_path=$formData['img_path'];
 
                 }
 
                 public function insertData(){
-                    $article=new Article($this->headline,$this->content,$this->journalists,$this->dateAdded,$this->timesRead);
+                    $article=new Article($this->headline,$this->content,$this->journalists,$this->dateAdded,$this->timesRead,$this->img_path);
                     $mapper=new ArticleMapper();
                     $mapper->insertArticle($article);
 

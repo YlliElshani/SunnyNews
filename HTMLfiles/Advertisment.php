@@ -64,7 +64,6 @@
                     <option value="4 month">4 months</option>
                   </select>
                   <br/>
-
                   <h3>Please select your preffered type of Advertisment</h3>
                     <input type="radio" id="Ad" name="adType" value="Banner">
                     <label for="Banner">Banner Ad</label><br>
@@ -73,51 +72,13 @@
                     <input type="radio" id="Ad" name="adType" value="newsAd">
                     <label for="newsAd">News Advert</label>
                     <input type="radio" id="Ad" name="adType" value="newsAd">
-
                 <label>
                     Additional Info:
                 </label>
                 <textarea  min="0" max="40" name="moreInfo">
                 </textarea>
-
                 <input type="submit" class="btn" name="submitBtn">
-
             </form>
-        </div>
-
-
-
-        <div id="sliderAuto">
-            <script>
-
-            var index=0 ;
-            var kohaPerSlide= 3000;
-            var fotot = [];
-
-            fotot[0]= '../Pics/pic1.jpg'
-            fotot[1]='../Pics/pic2.jpg'
-            fotot[2]='../Pics/pic3.jpg'
-            fotot[3]='../Pics/pic5.jpeg'
-
-            function slidePics(){
-                document.sliderpics.src = fotot[index];
-                if(index<fotot.length - 1){
-
-                index++;
-
-                }
-                else{
-
-                index=0;
-
-                }
-
-                setTimeout("slidePics()",kohaPerSlide);
-            }
-            window.onload = slidePics;
-
-            </script>
-            <img name="sliderpics" id="imgCSS" style="filter: invert(0);">
         </div>
 
         <?php

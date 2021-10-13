@@ -44,10 +44,16 @@ require_once 'dbh.class.php';
                 $statement->execute();
             }
 
+            public function incrementByOne($id){
+                $this->query="UPDATE articles(headline,content,journalists,dateAdded,timesRead,img_path) SET timesRead(+1)
+                WHERE id=:id";
+                $statement = $this->conn->prepare($this->query);
+                $statement->bindParam(":id", $id);
+                $statement->execute();
+            }
 
             public function getMostReadArticle(){
                 $this->query="SELECT l.headline,count(*) AS MeTeLexuarit FROM articles l
-                WHERE l.dateAdded>'2021-09-28' AND l.dateAdded<'2021-09-30'
                 group by l.headline ASC";
                 $statement = $this->conn->prepare($this->query);
                 $statement->execute();
@@ -56,8 +62,8 @@ require_once 'dbh.class.php';
 
             
             public function insertArticle(\Article $article){
-                $query="INSERT INTO articles (headline,content,journalists,dateAdded,timesRead)
-                VALUES(:headline,:content,:journalists,:dateAdded,:timesRead)";
+                $query="INSERT INTO articles (headline,content,journalists,dateAdded,timesRead,img_path)
+                VALUES(:headline,:content,:journalists,:dateAdded,:timesRead,:img_path)";
                 $statement = $this->conn->prepare($query);
 
                 $headline=$article->getHeadline();
@@ -65,26 +71,21 @@ require_once 'dbh.class.php';
                 $journalists=$article->getJournalist();
                 $dateAdded=$article->getDateAdded();
                 $timesRead=$article->getTimesRead();
+                $imgPath=$article->getImgPath();
 
                 $statement->bindParam(":headline",$headline);
                 $statement->bindParam(":content",$content);
                 $statement->bindParam(":journalists",$journalists);
                 $statement->bindParam(":dateAdded",$dateAdded);
                 $statement->bindParam(":timesRead",$timesRead);
+                $statement->bindParam(":img_path",$imgPath);
                 $statement->execute();
             }
 
-            /*
-                Due to time restrictions, news articles will be limited to a set ammount of Id's(18 in total) which
-                then will be manually called into their appropriate spaces. The crud functionality
-                will enable "posting" new articles by editing the ones already in place.
-
-                Articles will be different because each hyperlink will have the re-usable code
-                from the NewsDetail.html file, with different article Id's.
-            */
             
             public function editArticle(\Article $article,$id){
-                    $query="UPDATE articles SET headline=:headline,content=:content,journalists=:journalists,dateAdded=:dateAdded,timesRead=:timesRead
+                    $query="UPDATE articles SET headline=:headline,content=:content,journalists=:journalists
+                    ,dateAdded=:dateAdded,timesRead=:timesRead,img_path=:img_path,
                     WHERE id=:id";
                     var_dump($article);
                     $statement=$this->conn->prepare($query);
@@ -93,12 +94,15 @@ require_once 'dbh.class.php';
                     $journalists=$article->getJournalist();
                     $dateAdded=$article->getDateAdded();
                     $timesRead=$article->getTimesRead();
+                    $img_path=$article->getImgPath();
+
     
                     $statement->bindParam(":headline",$headline);
                     $statement->bindParam(":content",$content);
                     $statement->bindParam(":journalists",$journalists);
                     $statement->bindParam(":dateAdded",$dateAdded);
                     $statement->bindParam(":timesRead",$timesRead);
+                    $statement->bindParam(":img_path",$img_path);
                     $statement->bindParam(":id",$id);
                     $statement->execute();
             }

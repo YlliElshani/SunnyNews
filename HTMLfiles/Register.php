@@ -89,6 +89,9 @@
                 alert("Please enter an email");
                 return false;
             }
+            else if(!emailR.test(email)){
+
+            }
             else if(password.value==""){
                 alert("Please enter a password");
                 return false;

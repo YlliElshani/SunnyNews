@@ -2,10 +2,10 @@
  i=0;
  var images = [];
 
- images[0] = '../Pics/pic1';
- images[1] = '../Pics/pic2';
- images[2] = '../Pics/pic3';
- images[3] = '.../Pics/pic4';
+ images[0] = '../Pics/pic1.jpg';
+ images[1] = '../Pics/pic2.jpg';
+ images[2] = '../Pics/pic5.jpeg';
+ images[3] = '../Pics/pic7.jpeg';
 
 function slider() {
 
@@ -26,3 +26,79 @@ function slider2() {
          document.slide.src = images[i];
  }
 }
+
+
+
+i=0;
+var images=[];
+images [0]="";
+images [1]="";
+images [2]="";
+
+    if(i<images.length-1){
+        i++;
+        document.slider.src=[i];
+    }else{
+        i=0;
+        document.slider.pics=[i];
+    }
+
+    if(i<=0){
+        i=images.length-1;
+        document.slider.src=[i];
+    }else{
+        i--;
+        document.slider.src=[i];
+    }
+
+
+
+
+i=0;
+var images=[];
+images[0]="";
+if(i<images.length-1){
+    i++;
+    document.slider.src=[i];
+}else{
+    i=0;
+    document.slider.src=[i];
+}
+
+if(i<=0){
+    i=images.length-1;
+    document.slider.src=[i];
+}else{
+    i--;
+    document.slider.src=[i];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

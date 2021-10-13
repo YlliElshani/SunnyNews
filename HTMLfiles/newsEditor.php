@@ -5,12 +5,12 @@
     $mapper=new ArticleMapper();
     $articles=$mapper->getAllArticles();
 
-    if (isset($_GET['id'])) {
-        $id=$_GET['id'];
+    // if (isset($_GET['id'])) {
+    //     $id=$_GET['id'];
 
-        $mapper=new ArticleMapper();
-        $articles=$mapper->getArticleByID($id);
-    }
+    //     $mapper=new ArticleMapper();
+    //     $articles=$mapper->getArticleByID($id);
+    // }
 ?>
 
 
@@ -73,6 +73,11 @@
                     </label>
                     <input type="number" placeholder="Times Read" name="timesRead" id="journos">
 
+                    <label>
+                       Image Path
+                    </label>
+                    <input type="text" placeholder="Image Path" name="img_path" id="img_path">
+
                     <button name="submitBtn" id="submitBtn">
                         Submit
                     </button>
@@ -121,6 +126,12 @@
                        Times Read
                     </label>
                     <input type="number" placeholder="Times Read" name="timesRead" id="journos">
+
+                    <label>
+                       Image Path
+                    </label>
+                    <input type="text" placeholder="Image Path" name="img_path" id="img_path">
+
                     <button name="submitBtn" id="submitBtn">
                         Submit
                     </button>
@@ -154,7 +165,9 @@
                   </p> 
                   <p>
                     <?php echo $articles['dateAdded'];?><br>
-                  </p> 
+                  </p>
+                  <img src="<?php echo $articles['img_path']?>" width="250" height="100"> 
+                  <br>
                     <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
                     <br/>
@@ -179,6 +192,9 @@
                   </p> 
                     <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
+                    <br>
+                    <a href=<?php echo "../buisnessLogic/incTimesRead.php?id=".$articles['id'];
+                    ?>>Update Test</a>
                 <?php 
                     }
                 ?>

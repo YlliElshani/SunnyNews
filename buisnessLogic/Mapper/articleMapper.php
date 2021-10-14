@@ -45,11 +45,19 @@ require_once 'dbh.class.php';
             }
 
             public function incrementByOne($id){
-                $this->query="UPDATE articles(headline,content,journalists,dateAdded,timesRead,img_path) SET timesRead(+1)
+                $this->query="UPDATE articles SET timesRead=timesRead+1
                 WHERE id=:id";
                 $statement = $this->conn->prepare($this->query);
                 $statement->bindParam(":id", $id);
                 $statement->execute();
+            }
+
+            public function showTop4MostRead(){
+                $this->query="SELECT headline,content,journalists,dateAdded FROM articles
+                order by timesRead DESC LIMIT 4";
+                $statement = $this->conn->prepare($this->query);
+                $statement->execute();
+                return $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
 
             public function getMostReadArticle(){

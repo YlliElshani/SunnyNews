@@ -166,11 +166,12 @@
                   <p>
                     <?php echo $articles['dateAdded'];?><br>
                   </p>
-                  <img src="<?php echo $articles['img_path']?>" width="250" height="100"> 
-                  <br>
+                  <br/>
                     <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
                     ?>>Delete</a>
                     <br/>
+                    <a href=<?php echo "../buisnessLogic/incTimesRead.php?id=".$articles['id'];
+                    ?>>Increment viewership</a>
                 <?php 
                     }
                 ?>
@@ -178,7 +179,7 @@
 
             <div>
                 <?php
-                    $article = $mapper->getArticleByID('6');
+                    $article = $mapper->showTop4MostRead();
                     foreach($article as $articles){
                 ?>
                   <b>
@@ -190,11 +191,6 @@
                   <p>
                     <?php echo $articles['journalists'];?><br>
                   </p> 
-                    <a href=<?php echo "../buisnessLogic/Delete/deleteArticle.php?id=".$articles['id'];
-                    ?>>Delete</a>
-                    <br>
-                    <a href=<?php echo "../buisnessLogic/incTimesRead.php?id=".$articles['id'];
-                    ?>>Update Test</a>
                 <?php 
                     }
                 ?>
